@@ -74,20 +74,20 @@
         }
 
         .timer {
-           font-size: 2em;
-           margin: 40px 0;
-           color: #a677b4;
-           animation: fadeIn 1.5s;
-           text-align: center; 
-           font-family: 'Audiowide', cursive; 
-           text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); 
-           background: linear-gradient(135deg, #f8f7f7, #dbb1db); 
-           padding: 20px; 
-           border-radius: 15px; 
-           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-           border: 2px solid #a677b4; 
-           display: inline-block; 
-           transition: transform 0.2s; 
+    font-size: 1.em;
+    margin: 40px 0;
+    color: #a677b4; /* Timer text color */
+    animation: fadeIn 1.5s;
+    text-align: center; /* Center the timer text */
+    font-family: 'Audiowide', cursive; /* Modern font style */
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); /* Light shadow for a soft effect */
+    background: linear-gradient(135deg, #f8f7f7, #dbb1db); /* Light gradient background */
+    padding: 20px; /* Space around the text */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+    border: 2px solid #a677b4; /* Subtle border */
+    display: inline-block; /* Allow padding and margin to be applied */
+    transition: transform 0.2s; /* Add a hover effect */
         }
 
         button {
@@ -120,16 +120,17 @@
 
         .floating-heart {
             position: absolute;
-            font-size: 2em;
-            color: red;
-            animation: float 5s infinite;
-        }
+            font-size: 3rem; /* Adjust size as needed */
+            opacity: 0.6; /* Set transparency level (0 to 1) */
+            pointer-events: none; /* Make sure they don’t interfere with clicks */
+            animation: float 3s infinite ease-in-out; /* Optional: Add floating animation */
+    }
 
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-30px); }
-            100% { transform: translateY(0); }
-        }
+      @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
 
         /* Scroll Button */
         #scrollButton {
@@ -205,9 +206,9 @@
     </footer>
 
     <!-- Floating hearts -->
-    <div class="floating-heart" style="top: 15%; left: 20%;">❤️</div>
-    <div class="floating-heart" style="top: 30%; left: 70%;">❤️</div>
-    <div class="floating-heart" style="top: 45%; left: 40%;">❤️</div>
+    <div class="floating-heart" style="top: 15%; left: 20%;">🩷</div>
+    <div class="floating-heart" style="top: 30%; left: 70%;">🩷</div>
+    <div class="floating-heart" style="top: 45%; left: 40%;">🩷</div>
 
     <!-- Scroll Button -->
     <button id="scrollButton" onclick="scrollToTop()">↑</button>
