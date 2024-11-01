@@ -90,26 +90,87 @@
           transition: transform 0.2s; 
         }
 
-        button {
-            padding: 10px 20px;
-            background-color: #1120f0;
-            border: none;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-            animation: pulse 1s infinite;
-        }
+          .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(37, 37, 37);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
 
-        button:hover {
-            background-color: #6a5cf0;
-            transform: scale(1.05) rotate(3deg);
-        }
+.button:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
+}
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
+.button:active {
+    transform: scale(2);
+    transition: transform 0.1s; 
+}
+
+.button:focus {
+    outline: none;
+}
+
+.hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hoverEffect div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(
+        90deg,
+        rgb(179, 61, 100) 0%,
+        rgba(191, 70, 255, 1) 49%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 1s linear;
+    opacity: 0.5;
+}
+
+.button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+}
+
+@keyframes effect {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+         
+
+
+        
 
         footer {
             margin-top: 20px;
@@ -169,8 +230,15 @@
         <p><strong>Venue:</strong> Raja bari khazanchi hat, Purnea.</p>
         <p><strong>RSVP:</strong> Your presence is a blessing to us!</p>
         <div class="timer" id="timer"></div>
-        <button id="rsvpBtn">RSVP</button>
-        <div id="rsvpMessage"></div>
+       <button class="button" id="rsvpBtn">
+            RSVP Click
+            <div class="hoverEffect">
+                <div></div>
+            </div>
+        </button>
+        
+          <div id="rsvpMessage"></div>
+        </div>
     </section>
 
     <section class="quote">
@@ -240,7 +308,7 @@
             const rsvpMessage = document.getElementById("rsvpMessage");
             rsvpMessage.innerHTML = "Thank you for your RSVP!";
             rsvpMessage.style.color = "green";
-            rsvpMessage.style.fontSize = "1.2em";
+            rsvpMessage.style.fontSize = "1.5em";
             rsvpMessage.style.animation = "fadeIn 1s";
         });
 
